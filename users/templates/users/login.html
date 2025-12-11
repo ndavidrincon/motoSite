@@ -1,1 +1,10 @@
-Acá aparecera el formulario de loging
+{% extends "base.html" %}
+{% load tailwind_filters %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit">Login</button>
+</form>
+{% endblock content %}
