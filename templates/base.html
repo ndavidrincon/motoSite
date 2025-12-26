@@ -6,20 +6,133 @@
     <title>Guerro Bikers Services</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    {% load tailwind_filters %}
-    <div>
-        Hola, 
-        {% if user.is_authenticated %}
-        <form action="{% url "logout" %}" method="post">
-            {% csrf_token %}
-            {{ form|crispy }}
-            <button type="submit">Cerrar sesión</button>
-        </form>
-        {% else %}
-            <a href="{% url "login" %}">Login</a>
-        {% endif %}
+
+<body style="--nav-h:72px" class="pt-[var(--nav-h)]">
+    {% load static %}
+
+    <nav class="bg-[#1B418C] text-white fixed top-0 left-0 w-full z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-[72px]">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="{% url "login" %}">
+                        <img src="https://res.cloudinary.com/dbrbr4ist/image/upload/v1760369717/LOGO_ALTA_rjiq6q.png"
+                        alt="Logo Guerrero"
+                        class="h-12 w-12 rounded-full object-cover">
+                    </a>
+                </div>
+
+                <!-- Texto -->
+                <p class="hidden sm:block text-sm text-center">
+                    ¡Expertos en lo que hacemos!
+                </p>
+
+                <!-- Menú desktop / botón mobile -->
+                <div class="flex items-center">
+                    
+                    <!-- Menú escritorio -->
+                    <ul class="hidden md:flex space-x-6">
+                        <li><a href="/" class="hover:text-[#05C7F2]">Inicio</a></li>
+                        <li><a href="/nosotros/" class="hover:text-[#05C7F2]">Nosotros</a></li>
+                    </ul>
+
+                    <!-- Botón hamburguesa -->
+                    <button id="menu-btn"
+                        class="md:hidden ml-4 flex flex-col justify-center items-center w-8 h-8 group space-y-1.5">
+                        <span class="line w-6 h-0.5 bg-white transition-all"></span>
+                        <span class="line w-6 h-0.5 bg-white transition-all"></span>
+                        <span class="line w-6 h-0.5 bg-white transition-all"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="mobile-menu"
+        class="fixed top-[74px] right-4 w-48 bg-[#1B418C] text-white rounded-xl shadow-xl
+                max-h-0 overflow-hidden transition-all duration-500 ease-in-out
+                md:hidden z-40 shadow-md">
+        
+        <div class="flex flex-col items-center space-y-4 py-4">
+            <a href="/" class="hover:text-[#05C7F2]">Inicio</a>
+            <a href="/nosotros/" class="hover:text-[#05C7F2]">Nosotros</a>
+        </div>
     </div>
-    {% block content %}{% endblock content %}
+
+    
+    <main class="min-h-[calc(100vh-var(--nav-h))]">
+        {% block content %}{% endblock content %}
+    </main>
+
+
+    <footer class="bg-[#1B418C] text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left gap-10">
+            
+            <!-- Columna 1: Logo y redes -->
+            <div class="flex flex-col items-center justify-center gap-4 text-center w-full md:w-auto">
+                <a href="{% url "login" %}">
+                    <img src="https://res.cloudinary.com/dbrbr4ist/image/upload/v1760369717/LOGO_ALTA_rjiq6q.png" 
+                        alt="Logo Guerrero" 
+                        class="w-40 h-40 rounded-full object-cover mx-auto">
+                </a>  
+                <p class="text-sm text-[var(--white)]">Expertos en lo que hacemos</p>
+            </div>
+
+            <!-- Columna 2: Info general -->
+            <div>
+                <h3 class="font-bold mb-2">Info general</h3>
+                <ul class="space-y-1 text-sm">
+                    <li><a href="#" class="hover:text-[var(--logo-ligth-blue)]">Sobre nosotros</a></li>
+                    <li><a href="#" class="hover:text-[var(--logo-ligth-blue)]">Políticas de privacidad</a></li>
+                    <li><a href="#" class="hover:text-[var(--logo-ligth-blue)]">Términos y condiciones</a></li>
+                </ul>
+                <div class="flex justify-center space-x-2 mt-2">
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/share/1YUfdvDm2W/" 
+                        target="_blank" 
+                        aria-label="Facebook" 
+                        class="transition-opacity hover:opacity-80">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fbTitle">
+                            <title id="fbTitle">Facebook</title>
+                            <rect x="2" y="2" width="20" height="20" rx="4" ry="4" fill="#05C7F2"/>
+                            <path d="M15.5 8.5h-1.4c-.4 0-.8.3-.8.8v1h2.2l-.3 2.1h-1.9V19h-2.2v-6.6h-1.8v-2.1h1.8V9.6c0-1.6 1.1-2.8 2.7-2.8.8 0 1.5.1 1.7.2v2z" fill="#F2F2F2"/>
+                        </svg>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/guerrerobikersservices?igsh=MWFvZWpuNG12ODRjNg==" 
+                        target="_blank" 
+                        aria-label="Instagram" 
+                        class="transition-opacity hover:opacity-80">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="igTitle">
+                            <title id="igTitle">Instagram</title>
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="#C13584"/>
+                            <circle cx="12" cy="12" r="3.2" fill="#ffffffff"/>
+                            <circle cx="12" cy="12" r="2.5" fill="#C13584"/>
+                            <circle cx="17.5" cy="6.5" r="0.9" fill="#ffffffff"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna 3: Servicios -->
+            <div>
+                <h3 class="font-bold mb-2">Servicios</h3>
+                <ul class="space-y-1 text-sm">
+                    <li><a href="{% url "list_product" %}" class="hover:text-[#05C7F2]">Ventas</a></li>
+                    <li><a href="https://wa.me/573134498177/?text=Hola%20Guerrero,%20estoy%20interesado%20en%20agendar%20una%20cita%20para:%20" class="hover:text-[#05C7F2]">Agendamiento</a></li>
+                </ul>
+            </div>
+            </div>
+
+            <!-- Línea inferior -->
+            <div class="border-t border-gray-300 mt-10 pt-4 text-center text-xs text-[var(--gray)]">
+                © {{ year|default:2025 }} Mi Marca. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
 </body>
+<script src="{% static 'js/base.js' %}" defer></script>
 </html>
