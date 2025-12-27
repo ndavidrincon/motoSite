@@ -61,7 +61,7 @@
     </div>
 
     
-    <main class="min-h-[calc(100vh-var(--nav-h))]">
+    <main>
         {% block content %}{% endblock content %}
     </main>
 
@@ -77,7 +77,6 @@
                         alt="Logo Guerrero" 
                         class="w-40 h-40 rounded-full object-cover mx-auto">
                 </a>  
-                <p class="text-sm text-[var(--white)]">Expertos en lo que hacemos</p>
             </div>
 
             <!-- Columna 2: Info general -->
@@ -119,17 +118,19 @@
 
             <!-- Columna 3: Servicios -->
             <div>
-                <h3 class="font-bold mb-2">Servicios</h3>
+                <h3 class="font-bold mb-2">Servicios y ubicación</h3>
                 <ul class="space-y-1 text-sm">
                     <li><a href="{% url "list_product" %}" class="hover:text-[#05C7F2]">Ventas</a></li>
                     <li><a href="https://wa.me/573134498177/?text=Hola%20Guerrero,%20estoy%20interesado%20en%20agendar%20una%20cita%20para:%20" class="hover:text-[#05C7F2]">Agendamiento</a></li>
+                    <li><a href="https://maps.app.goo.gl/dbEgAST3b6aTtSQBA"class="hover:text-[#05C7F2]" >¿Como llego?</a></li>
                 </ul>
             </div>
             </div>
 
             <!-- Línea inferior -->
             <div class="border-t border-gray-300 mt-10 pt-4 text-center text-xs text-[var(--gray)]">
-                © {{ year|default:2025 }} Mi Marca. Todos los derechos reservados.
+                <p>© {{ year|default:2025 }} Mi Marca. Todos los derechos reservados.</p>
+                <p class="text-sm text-[var(--white)]">Expertos en lo que hacemos.</p>
             </div>
         </div>
     </footer>
