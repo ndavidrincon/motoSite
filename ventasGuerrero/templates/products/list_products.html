@@ -1,18 +1,50 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Lista de productos</h1>
+<main>
+    <h1 class="text-3xl font-bold text-center text-[#1B418C] mb-6">El cajón de Guerrero</h1>
+    
+    <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {% for product in products %}
+            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden">
 
-<ul>
-    {% for product in products  %}
-        <li>
-            {{ product.name }}
-            <p>$ {{ product.price }}</p>
-            {% if product.photo %}
-                <img src="{{ product.photo.url }}" alt="{{ product.name }}" style= "max_height: 100px;">
-            {% endif %}
-        </li>
-    {% endfor %}
-</ul>
+                {% if product.photo %}
+                    <img 
+                        src="{{ product.photo.url }}" 
+                        alt="{{ product.name }}"
+                        class="w-full h-48 object-cover"
+                    >
+                {% else %}
+                    <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-500">
+                        Sin imagen
+                    </div>
+                {% endif %}
+
+                <div class="p-4">
+                    <h2 class="text-lg font-semibold text-gray-800">
+                        {{ product.name }}
+                    </h2>
+                    <p class="mt-4">
+                        {{ product.description }}
+                    </p>
+
+                    <p class="mt-4 text-xl font-bold text-[#1B418C] mt-2">
+                        $ {{ product.price }}
+                    </p>
+                </div>
+                <a href="https://wa.me/573134498177/?text=Hola%20Guerrero,%20estoy%20interesado%20en%20{{ product.name }}%20"
+                    target="_blank"
+                    class="mt-0 block text-center bg-[#1B418C] text-white py-2 rounded-b-xl hover:bg-[#05C7F2] transition"
+                >
+                Mas información
+                </a>
+            </div>
+        {% empty %}
+            <p class="text-center text-gray-500 col-span-full">
+                No hay productos disponibles.
+            </p>
+        {% endfor %}
+    </div>
+</main>
 {% endblock content %}
 

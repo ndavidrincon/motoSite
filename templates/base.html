@@ -6,6 +6,57 @@
     <title>Guerro Bikers Services</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+<div>
+    <a
+        href="https://wa.me/573134498177/?text=Hola%20Guerrero,%20estoy%20interesado%20en%20agendar%20una%20cita%20para:%20"
+        target="_blank"
+        class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full
+             flex items-center justify-center
+             shadow-lg hover:bg-green-600
+             transition"
+    >
+
+        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="www.w3.org">
+            <defs>
+                <!-- Gradiente para la burbuja #05C7F2 -->
+                <radialGradient id="bubbleGrad" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+                <stop offset="0%" stop-color="#80EAFF" />
+                <stop offset="80%" stop-color="#05C7F2" />
+                <stop offset="100%" stop-color="#04A3C6" />
+                </radialGradient>
+                
+                <!-- Sombra suave para el globo de texto -->
+                <filter id="softDrop" x="-20%" y="-20%" width="150%" height="150%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+                <feOffset dx="2" dy="2" />
+                <feComponentTransfer>
+                    <feFuncA type="linear" slope="0.2" />
+                </feComponentTransfer>
+                <feMerge>
+                    <feMergeNode />
+                    <feMergeNode in="SourceGraphic" />
+                </feMerge>
+                </filter>
+            </defs>
+
+            <!-- Burbuja Exterior -->
+            <circle cx="100" cy="100" r="90" fill="url(#bubbleGrad)" />
+            
+            <!-- Brillo de la burbuja -->
+            <ellipse cx="65" cy="55" rx="25" ry="12" fill="white" fill-opacity="0.4" transform="rotate(-35, 65, 55)" />
+            <circle cx="140" cy="140" r="6" fill="white" fill-opacity="0.2" />
+
+            <!-- GLOBO DE TEXTO (Estilo Blando) -->
+            <g filter="url(#softDrop)">
+                <!-- Cuerpo del globo de diálogo con esquinas muy redondeadas (rx="15") -->
+                <rect x="60" y="70" width="80" height="60" rx="15" fill="white" />
+                
+                <!-- La "cola" del globo de diálogo (forma de triángulo suave) -->
+                <path d="M100 130 L90 145 L115 130 Z" fill="white" />
+            </g>
+        </svg>
+    </a>
+</div>
 
 <body style="--nav-h:72px" class="pt-[var(--nav-h)]">
     {% load static %}
@@ -61,7 +112,7 @@
     </div>
 
     
-    <main>
+    <main class="min-h-[calc(100vh-72px)] px-6 py-6">
         {% block content %}{% endblock content %}
     </main>
 
