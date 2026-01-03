@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('', lambda request: redirect('list_product')),
+    path('', lambda request: redirect('home')),
     path("", include("core.urls")),
     path('admin/', admin.site.urls),
     path('productos/', include('ventasGuerrero.urls')),
