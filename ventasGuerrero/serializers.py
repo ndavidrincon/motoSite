@@ -6,8 +6,8 @@ class productSerializer(ModelSerializer):
     class Meta:
         model = ProductGuerrero
         fields = [
-            'name',
-            'description',
-            'price',
-            'photo',
+            "name",
+            "description",
+            "price",
+            "photo",
         ]

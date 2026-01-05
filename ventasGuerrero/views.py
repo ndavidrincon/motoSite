@@ -9,6 +9,7 @@ from ventasGuerrero.models import ProductGuerrero
 from .forms import VentasGuerreroForm
 from .serializers import productSerializer
 
+
 class VentasGuerreroFormView(generic.FormView):
     template_name = "products/add_product.html"
     form_class = VentasGuerreroForm
@@ -17,12 +18,14 @@ class VentasGuerreroFormView(generic.FormView):
     def form_valid(self, form):
         form.save()
         return super().form_valid(form)
-    
+
+
 class ProductListView(generic.ListView):
     model = ProductGuerrero
-    template_name = 'products/list_products.html'
-    context_object_name = 'products'
-    
+    template_name = "products/list_products.html"
+    context_object_name = "products"
+
+
 class ProductListAPI(APIView):
     authentication_classes = [SessionAuthentication, TokenAuthentication]
     permission_classes = [IsAuthenticated]

@@ -7,18 +7,41 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='VentasGuerro',
+            name="VentasGuerro",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.TextField(max_length=200, verbose_name='Nombre producto')),
-                ('description', models.TextField(max_length=250, verbose_name='Descripción')),
-                ('price', models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Precio')),
-                ('photo', models.ImageField(blank=True, null=True, upload_to='Logos', verbose_name='Imagen')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.TextField(max_length=200, verbose_name="Nombre producto"),
+                ),
+                (
+                    "description",
+                    models.TextField(max_length=250, verbose_name="Descripción"),
+                ),
+                (
+                    "price",
+                    models.DecimalField(
+                        decimal_places=2, max_digits=10, verbose_name="Precio"
+                    ),
+                ),
+                (
+                    "photo",
+                    models.ImageField(
+                        blank=True, null=True, upload_to="Logos", verbose_name="Imagen"
+                    ),
+                ),
             ],
         ),
     ]
