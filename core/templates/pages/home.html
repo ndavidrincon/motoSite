@@ -3,9 +3,9 @@
 
 {% block content %}
 
-<main class="min-h-[calc(100vh-72px)]">
+<main class="relative min-h-[calc(100vh-72px)]">
     <figure
-        class="relative min-h-[calc(100vh-72px)] bg-cover bg-center flex items-center justify-center"
+        class="sticky top-0 min-h-[calc(100vh-72px)] bg-cover bg-center flex items-center justify-center"
         style="background-image: url('https://res.cloudinary.com/dbrbr4ist/image/upload/v1766908641/20250603_085351_aqht9u.jpg');"
     >
         <!-- Overlay opcional -->
@@ -19,10 +19,11 @@
                 inline-flex items-center gap-3
                 bg-[#1B418C]
                 text-white
+                border-1 border-white
                 px-8 py-4
                 rounded-full
                 text-lg font-semibold
-                shadow-lg
+                shadow-xl/30
                 hover:bg-[#05C7F2]
                 hover:scale-105
                 transition-all duration-300"
@@ -31,23 +32,25 @@
             </a>
         </section>
     </figure>
-    <section id="whatIs" class="relative min-h-[calc(100vh-72px)] px-6 py-16 flex flex-col md:flex-row items-center justify-center gap-10 max-w-7xl mx-auto">
-        <div class="md:w-1/2 text-center md:text-left">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#1B418C] mb-4">Taller de motos BMW en Bogotá</h2>
-            <p class="text-gray-600 text-lg leading-relaxed">En Guerrero Bikers Services, tu BMW está en las mejores manos. Con atención personalizada, repuestos originales u homologados según tus necesidades y el más estricto apego al manual de taller (torques precisos, procedimientos claros y revisión del juego de válvulas según las especificaciones del fabricante), garantizamos el cuidado que tu moto merece. Ofrecemos asesoría honesta en repuestos, mantenimiento y seguridad vial, con precios justos y trabajos garantizados para que disfrutes de cada kilómetro dentro y fuera de Bogotá.</p>
-        </div>
-        <figure class=" md:w-1/2 max-h-[500px] overflow-hidden rounded-2xl shadow-lg">
-            <img src="https://res.cloudinary.com/dbrbr4ist/image/upload/v1767026340/20251016_112726_gfhvob.jpg" alt="Imagen del taller" class="w-full h-full object-cover">
-        </figure>
-    </section>
+    <div class="sticky top-0 bg-[#FFFFFF]">
+        <section id="whatIs" class="relative min-h-[calc(100vh-72px)] px-6 py-16 flex flex-col md:flex-row items-center justify-center gap-10 max-w-7xl mx-auto ">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#1B418C] mb-4">Taller de motos BMW en Bogotá</h2>
+                <p class="text-gray-600 text-lg leading-relaxed">En Guerrero Bikers Services, tu BMW está en las mejores manos. Con atención personalizada, repuestos originales u homologados según tus necesidades y el más estricto apego al manual de taller (torques precisos, procedimientos claros y revisión del juego de válvulas según las especificaciones del fabricante), garantizamos el cuidado que tu moto merece. Ofrecemos asesoría honesta en repuestos, mantenimiento y seguridad vial, con precios justos y trabajos garantizados para que disfrutes de cada kilómetro dentro y fuera de Bogotá.</p>
+            </div>
+            <figure class=" md:w-1/2 max-h-[500px] overflow-hidden rounded-2xl shadow-xl/30">
+                <img src="https://res.cloudinary.com/dbrbr4ist/image/upload/v1767026340/20251016_112726_gfhvob.jpg" alt="Imagen del taller" class="w-full h-full object-cover">
+            </figure>
+        </section>
+    </div>
 
-    <div class="bg-[#E0FFFF]">
+    <div class="sticky top-0 bg-[#E0FFFF]">
         <section id="whatFaind" class="relative min-h-[calc(100vh-72px)] px-6 py-16 flex flex-col md:flex-row items-center justify-center gap-10 max-w-7xl mx-auto ">
             <div class="md:w-1/2 text-center md:text-left">
                 <h2 class="text-3xl md:text-4xl font-bold text-[#1B418C] mb-4">¿Qué puedes esperar de Guerrero?</h2>
                 <p class="text-gray-600 text-lg leading-relaxed">En Guerrero Bikers Services, no solo cuidamos tu BMW, la consentimos. Entendemos que tu moto es más que un vehículo, es tu compañera de aventuras, tu escape y tu orgullo. Por eso, acá encontraras:</p>
             </div>
-            <figure class=" md:w-1/2 max-h-[500px] overflow-hidden rounded-2xl shadow-lg">
+            <figure class=" md:w-1/2 max-h-[500px] overflow-hidden rounded-2xl shadow-xl/30">
                 <img src="https://res.cloudinary.com/dbrbr4ist/image/upload/v1767033552/20251104_141153_xltdwa.png">
             </figure>
             <div class="md:w-1/2 text-center md:text-left">
@@ -61,18 +64,18 @@
         </section>
     </div>
 
-    <section id="happyClients" class="bg-white">
+    <section id="happyClients" class="sticky top-0 bg-white text-center">
         <div
             class="min-h-[calc(100vh-72px)]
-                px-6 py-16
+                px-6 py-10
                 max-w-7xl mx-auto
                 flex flex-col items-center
                 justify-center
-                gap-10"
+                gap-5"
         >
 
-            <div class="text-center max-w-2xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#1B418C] mb-4">
+            <div class=" max-w-2xl">
+                <h2 id="miElemento" class="text-3xl md:text-4xl font-bold text-[#1B418C] mb-4">
                     Clientes felices
                 </h2>
                 <p class="text-gray-600 text-lg">
@@ -80,10 +83,20 @@
                 </p>
             </div>
 
-            <div class="w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-lg">
-                <iframe width="348" height="618" src="https://www.youtube.com/embed/JguxzV55Z0w" title="HappyClient1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            <div class="w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-xl/30">
+                <iframe 
+                    class="w-full aspect-video rounded-xl"
+                    src="https://www.youtube.com/embed/nyLZt7N6ytc"
+                    width="1467"
+                    height="500"
+                    title="Clientes satisfechos, @guerrerobikersservice"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
                 </iframe>
             </div>
+            <p class="text-gray-600 text-lg">Queremos agradecer mucho a todos los clientes que nos permitieron grabar su opinión sobre nuestro trabajo.</p>
         </div>
     </section>
 
