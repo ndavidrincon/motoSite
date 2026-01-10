@@ -3,18 +3,19 @@
 
 {% block content %}
 
-<main class="relative min-h-[calc(100vh-72px)]">
+<main class="relative">
     <figure
-        class="sticky top-0 min-h-[calc(100vh-72px)] bg-cover bg-center flex items-center justify-center"
-        style="background-image: url('https://res.cloudinary.com/dbrbr4ist/image/upload/v1766908641/20250603_085351_aqht9u.jpg');"
+        class="relative md:sticky md:top-0 min-h-[60dvh] md:min-h-[calc(100dvh-72px)] bg-cover bg-center flex items-center justify-center"
+        style="background-image: url('https://res.cloudinary.com/dbrbr4ist/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1766908641/20250603_085351_aqht9u.jpg');"
     >
         <!-- Overlay opcional -->
         <div class="absolute inset-0 bg-black/40"></div>
 
         <!-- Contenido -->
-        <section id="link_scheduling" class="relative text-white text-center z-10">
+        <section id="link_scheduling" class="relative z-10 text-center px-6">
             <a href="https://wa.me/573134498177/?text=Hola%20Guerrero,%20estoy%20interesado%20en%20agendar%20una%20cita%20para:%20"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="
                 inline-flex items-center gap-3
                 bg-[#1B418C]
@@ -32,41 +33,55 @@
             </a>
         </section>
     </figure>
-    <div class="sticky top-0 bg-[#FFFFFF]">
-        <section id="whatIs" class="relative min-h-[calc(100vh-72px)] px-6 py-16 flex flex-col md:flex-row items-center justify-center gap-10 max-w-7xl mx-auto ">
+
+    <div class="relative md:sticky md:top-0 bg-white border-t border-gray-100">
+        <section id="whatIs" 
+        class="min-h-fit md:min-h-[calc(100dvh-72px)] px-6 py-16 flex flex-col md:flex-row items-center justify-center gap-10 max-w-7xl mx-auto ">
             <div class="md:w-1/2 text-center md:text-left">
                 <h2 class="text-3xl md:text-4xl font-bold text-[#1B418C] mb-4">Taller de motos BMW en Bogotá</h2>
                 <p class="text-gray-600 text-lg leading-relaxed">En Guerrero Bikers Services, tu BMW está en las mejores manos. Con atención personalizada, repuestos originales u homologados según tus necesidades y el más estricto apego al manual de taller (torques precisos, procedimientos claros y revisión del juego de válvulas según las especificaciones del fabricante), garantizamos el cuidado que tu moto merece. Ofrecemos asesoría honesta en repuestos, mantenimiento y seguridad vial, con precios justos y trabajos garantizados para que disfrutes de cada kilómetro dentro y fuera de Bogotá.</p>
             </div>
             <figure class=" md:w-1/2 max-h-[500px] overflow-hidden rounded-2xl shadow-xl/30">
-                <img src="https://res.cloudinary.com/dbrbr4ist/image/upload/v1767026340/20251016_112726_gfhvob.jpg" alt="Imagen del taller" class="w-full h-full object-cover">
+                <img src="https://res.cloudinary.com/dbrbr4ist/image/upload/f_auto,q_auto,dpr_auto,w_800/v1767026340/20251016_112726_gfhvob.jpg" 
+                class="w-full h-full object-cover"
+                srcset="
+                    https://res.cloudinary.com/dbrbr4ist/image/upload/f_auto,q_auto,dpr_auto,w_400/v1767026340/20251016_112726_gfhvob.jpg,
+                    https://res.cloudinary.com/dbrbr4ist/image/upload/f_auto,q_auto,dpr_auto,w_800/v1767026340/20251016_112726_gfhvob.jpg
+                "
+                alt="Imagen del taller"
+                loading="lazy"
+                decoding="async">
             </figure>
         </section>
     </div>
 
-    <div class="sticky top-0 bg-[#E0FFFF]">
-        <section id="whatFaind" class="relative min-h-[calc(100vh-72px)] px-6 py-16 flex flex-col md:flex-row items-center justify-center gap-10 max-w-7xl mx-auto ">
+    <div class="relative md:sticky md:top-0 bg-[#E0FFFF] border-t border-gray-100">
+        <section id="whatFaind" class="min-h-fit md:min-h-[calc(100dvh-72px)] px-6 py-16 flex flex-col md:flex-row items-center justify-center gap-10 max-w-7xl mx-auto ">
             <div class="md:w-1/2 text-center md:text-left">
                 <h2 class="text-3xl md:text-4xl font-bold text-[#1B418C] mb-4">¿Qué puedes esperar de Guerrero?</h2>
                 <p class="text-gray-600 text-lg leading-relaxed">En Guerrero Bikers Services, no solo cuidamos tu BMW, la consentimos. Entendemos que tu moto es más que un vehículo, es tu compañera de aventuras, tu escape y tu orgullo. Por eso, acá encontraras:</p>
             </div>
             <figure class=" md:w-1/2 max-h-[500px] overflow-hidden rounded-2xl shadow-xl/30">
-                <img src="https://res.cloudinary.com/dbrbr4ist/image/upload/v1767033552/20251104_141153_xltdwa.png">
+                <img src="https://res.cloudinary.com/dbrbr4ist/image/upload/f_auto,q_auto,dpr_auto,w_600/v1767033552/20251104_141153_xltdwa.png"
+                loading="lazy"
+                decoding="async">
             </figure>
-            <div class="md:w-1/2 text-center md:text-left">
-                <li><strong>Experiencia a Otro Nivel:</strong> Atención personalizada con cita previa para que cada detalle reciba la atención que merece.</li>
-                <li><strong>Conocimiento Profundo:</strong> Técnicos expertos que respiran BMW, con la precisión del manual de taller en cada ajuste y reparación.</li>
-                <li><strong>Piezas de Confianza:</strong> Repuestos originales u homologados seleccionados para un rendimiento óptimo y duradero.</li>
-                <li><strong>Diagnóstico Certero:</strong> Experiencia para identificar cualquier desafío y ofrecer soluciones efectivas con tecnología a la vanguardia.</li>
-                <li><strong>Transparencia Total:</strong> Precios claros y comunicación honesta en cada etapa del servicio.</li>
-                <li><strong>Pasión por la Ruta:</strong> Asesoría experta y soporte en carretera para que cada viaje sea una experiencia inolvidable.</li>
+            <div class="md:w-1/2 md:text-left">
+                <ul>
+                    <li><strong>Experiencia a Otro Nivel:</strong> Atención personalizada con cita previa para que cada detalle reciba la atención que merece.</li>
+                    <li><strong>Conocimiento Profundo:</strong> Técnicos expertos que respiran BMW, con la precisión del manual de taller en cada ajuste y reparación.</li>
+                    <li><strong>Piezas de Confianza:</strong> Repuestos originales u homologados seleccionados para un rendimiento óptimo y duradero.</li>
+                    <li><strong>Diagnóstico Certero:</strong> Experiencia para identificar cualquier desafío y ofrecer soluciones efectivas con tecnología a la vanguardia.</li>
+                    <li><strong>Transparencia Total:</strong> Precios claros y comunicación honesta en cada etapa del servicio.</li>
+                    <li><strong>Pasión por la Ruta:</strong> Asesoría experta y soporte en carretera para que cada viaje sea una experiencia inolvidable.</li>
+                </ul>
             </div>
         </section>
     </div>
 
     <section id="happyClients" class="sticky top-0 bg-white text-center">
         <div
-            class="min-h-[calc(100vh-72px)]
+            class="min-h-[calc(100dvh-72px)]
                 px-6 py-10
                 max-w-7xl mx-auto
                 flex flex-col items-center
@@ -86,21 +101,21 @@
             <div class="w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-xl/30">
                 <iframe 
                     class="w-full aspect-video rounded-xl"
-                    src="https://www.youtube.com/embed/nyLZt7N6ytc"
+                    aria-label="Reproducir video"
+                    src="https://www.youtube-nocookie.com/embed/nyLZt7N6ytc"
                     width="1467"
                     height="500"
                     title="Clientes satisfechos, @guerrerobikersservice"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin"
+                    loading="lazy"
                     allowfullscreen>
                 </iframe>
             </div>
             <p class="text-gray-600 text-lg">Queremos agradecer mucho a todos los clientes que nos permitieron grabar su opinión sobre nuestro trabajo.</p>
         </div>
     </section>
-
-    
 </main>
 
 {% endblock content %}

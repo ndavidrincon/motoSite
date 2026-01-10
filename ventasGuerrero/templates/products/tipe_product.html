@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Main Container con espaciado mejorado -->
+<main class="max-w-7xl mx-auto px-4 py-8 font-sans">
+    <header class="mb-12 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-[#1B418C] tracking-tight">
+            El Cajón de Guerrero
+        </h1>
+        <div class="h-1 w-24 bg-[#05C7F2] mx-auto mt-3 rounded-full"></div>
+    </header>
+
+    <!-- Grid Responsivo: 1 columna en móvil, 3 en desktop -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- SECCIÓN: MOTOS -->
+        <section id="motos" class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
+            <div class="relative h-64 overflow-hidden">
+                <img src="https://res.cloudinary.com/dbrbr4ist/image/upload/f_auto,q_auto,dpr_auto,w_400/v1768028429/SiluetaMotocicleta_aermii.jpg" 
+                alt="Motos BMW"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+                decoding="async">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <h2 class="absolute bottom-4 left-6 text-2xl font-bold text-white uppercase tracking-wider">Motos</h2>
+            </div>
+            <div class="p-6 text-center">
+                <p class="text-gray-600 h-16 mb-6">Compra tu moto usada con nosotros y te obsequiamos el peritaje.</p>
+                <a href="{% url "list_product_tipe" "1" %}" class="inline-block w-full py-3 px-6 bg-[#1B418C] text-white font-bold rounded-xl hover:bg-[#05C7F2] transition-colors">
+                    Ver Catálogo Motos
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: TIENDA -->
+        <section id="tienda" class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
+            <div class="relative h-64 overflow-hidden">
+                <img src="https://res.cloudinary.com/dbrbr4ist/image/upload/f_auto,q_auto,dpr_auto,w_400/v1766908150/20251104_112105_jtokuz.jpg" 
+                alt="Motos BMW"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+                decoding="async">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <h2 class="absolute bottom-4 left-6 text-2xl font-bold text-white uppercase tracking-wider">Tienda</h2>
+            </div>
+            <div class="p-6 text-center">
+                <p class="text-gray-600 h-16 mb-6">Repuestos originales y homologados para mantener el rendimiento óptimo de tu BMW.</p>
+                <a href="{% url "list_product_tipe" "2" %}" class="inline-block w-full py-3 px-6 bg-[#1B418C] text-white font-bold rounded-xl hover:bg-[#05C7F2] transition-colors">
+                    Ir a la Tienda
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: PULGUERO -->
+        <section id="pulgueroGuerrero" class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
+            <div class="relative h-64 overflow-hidden">
+                <!-- Reemplazar URL con imagen de artículos usados/ofertas -->
+                <img src="https://res.cloudinary.com/dbrbr4ist/image/upload/f_auto,q_auto,dpr_auto,w_400/v1768029798/20250410_152447_yiqwfj.jpg"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+                decoding="async">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <h2 class="absolute bottom-4 left-6 text-2xl font-bold text-white uppercase tracking-wider">Pulguero de Guerrero</h2>
+            </div>
+            <div class="p-6 text-center">
+                <p class="text-gray-600 h-16 mb-6">Oportunidades únicas en piezas, equipamiento y accesorios de segunda mano garantizados.</p>
+                <a href="{% url "list_product_tipe" "3" %}" class="inline-block w-full py-3 px-6 bg-[#1B418C] text-white font-bold rounded-xl hover:bg-[#05C7F2] transition-colors">
+                    Ver Ofertas
+                </a>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+{% endblock content %}

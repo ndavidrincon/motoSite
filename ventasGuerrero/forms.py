@@ -6,7 +6,7 @@ class VentasGuerreroForm(forms.Form):
     name = forms.CharField(max_length=200, required=True, label="Nombre")
     description = forms.CharField(max_length=250, required=True, label="Nombre")
     price = forms.DecimalField(
-        max_digits=10, decimal_places=2, required=True, label="Precio"
+        max_digits=10, decimal_places=0, required=True, label="Precio"
     )
     photo = forms.ImageField(label="Foto", required=False)
 

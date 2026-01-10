@@ -3,21 +3,38 @@
 
 {% block content %}
 
-<main class="relative min-h-[calc(100vh-72px)]">
-    <section id="whatIs" class="sticky top-0 min-h-[calc(100vh-72px)] px-6 py-16 flex flex-col md:flex-row items-center justify-center gap-10 max-w-7xl mx-auto">
+<main class="relative min-h-[calc(100dvh-72px)]">
+    <section id="whatIs" class="relative md:sticky md:top-0 min-h-[calc(100dvh-72px)] px-6 py-16 flex flex-col md:flex-row items-center justify-center gap-10 max-w-7xl mx-auto">
         <figure class=" md:w-1/2 max-h-[500px] overflow-hidden rounded-2xl shadow-xl/30">
-            <img src="https://res.cloudinary.com/dbrbr4ist/image/upload/v1766900357/20250924_093850_xcuh4x.jpg" alt="Imagen del taller" class="w-full h-full object-cover">
+            <img src="https://res.cloudinary.com/dbrbr4ist/image/upload/f_auto,q_auto,dpr_auto,w_800/v1766900357/20250924_093850_xcuh4x.jpg" 
+            srcset="
+                https://res.cloudinary.com/dbrbr4ist/image/upload/f_auto,q_auto,dpr_auto,w_800/v1766900357/20250924_093850_xcuh4x.jpg,
+                https://res.cloudinary.com/dbrbr4ist/image/upload/f_auto,q_auto,dpr_auto,w_400/v1766900357/20250924_093850_xcuh4x.jpg
+            "
+            sizes="(max-width: 768px) 100vw, 50vw"
+            alt="Imagen del taller"
+            loading="lazy"
+            decoding="async"
+            class="w-full h-full object-cover">
         </figure>
         <div class="md:w-1/2 text-center md:text-left">
             <h2 class="text-3xl md:text-4xl font-bold text-[#1B418C] mb-4">Nuestros Mandamientos como Guerrero Bikers Services:</h2>
-            <p class="text-gray-600 text-lg leading-relaxed">Cada BMW merece el cuidado y respeto que le daríamos a la nuestra. Por eso, nos guiamos por el manual del fabricante, respetamos los torques y revisamos el juego de válvulas según las indicaciones para proteger tu motor. Fernando Guerrero, con más de 15 años de experiencia en BMW, lidera un equipo que garantiza cada trabajo. La transparencia es fundamental: explicamos el "qué", "cómo" y "por qué" antes de intervenir tu moto y te mostramos las piezas reemplazadas si lo deseas. Además, te brindamos asesoría telefónica en carretera para resolver imprevistos y acompañarte en cada viaje.</p>
+            <p class="text-gray-600 text-lg leading-relaxed">Fernando Guerrero, con más de 15 años de experiencia en BMW, lidera un equipo que garantiza cada trabajo. La transparencia es fundamental: explicamos el "qué", "cómo" y "por qué" antes de intervenir tu moto y te mostramos las piezas reemplazadas si lo deseas. Además, te brindamos asesoría telefónica en carretera para resolver imprevistos y acompañarte en cada viaje.</p>
         </div>
     </section>
 
-    <div class="sticky top-0 bg-[#E0FFFF]">
-        <section id="whatFaind" class="relative min-h-[calc(100vh-72px)] px-6 py-16 flex flex-col md:flex-row items-center justify-center gap-10 max-w-7xl mx-auto ">
+    <div class="relative md:sticky md:top-0 bg-[#E0FFFF]">
+        <section id="whatFaind" class="min-h-fit md:min-h-[calc(100dvh-72px)] px-6 py-16 flex flex-col md:flex-row items-center justify-center gap-10 max-w-7xl mx-auto ">
             <figure class=" md:w-1/2 max-h-[500px] overflow-hidden rounded-2xl shadow-xl/30">
-                <img src="https://res.cloudinary.com/dbrbr4ist/image/upload/v1767073216/edited_dac7ph.jpg" alt="Imagen del taller" class="w-full h-full object-cover">
+                <img src="https://res.cloudinary.com/dbrbr4ist/image/upload/f_auto,q_auto,dpr_auto,w_800/v1767073216/edited_dac7ph.jpg" 
+                srcset="
+                    https://res.cloudinary.com/dbrbr4ist/image/upload/f_auto,q_auto,dpr_auto,w_800/v1767073216/edited_dac7ph.jpg,
+                    https://res.cloudinary.com/dbrbr4ist/image/upload/f_auto,q_auto,dpr_auto,w_400/v1767073216/edited_dac7ph.jpg
+                "
+                alt="Imagen del taller"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-full object-cover">
             </figure>
 
             <div class="md:w-1/2 text-center md:text-left">
@@ -26,12 +43,20 @@
             </div>
 
             <figure class="md:w-1/2 max-h-[500px] overflow-hidden rounded-2xl shadow-xl/30">
-                <img src="https://res.cloudinary.com/dbrbr4ist/image/upload/v1767073611/2_m9crfg.jpg" alt="Imagen del taller" class="w-full h-full object-cover">
+                <img src="https://res.cloudinary.com/dbrbr4ist/image/upload/f_auto,q_auto,dpr_auto,w_800/v1767073611/2_m9crfg.jpg"
+                srcset="
+                    https://res.cloudinary.com/dbrbr4ist/image/upload/f_auto,q_auto,dpr_auto,w_800/v1767073611/2_m9crfg.jpg,
+                    https://res.cloudinary.com/dbrbr4ist/image/upload/f_auto,q_auto,dpr_auto,w_400/v1767073611/2_m9crfg.jpg
+                "
+                alt="Imagen del taller" 
+                class="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async">
             </figure>
         </section>
     </div>
 
-    <section id="ourService" class="sticky top-0 min-h-[calc(100vh-72px)] px-6 py-10 flex flex-col items-center justify-center max-w-7xl mx-auto bg-[#FFFFFF]">
+    <section id="ourService" class="sticky top-0 min-h-[calc(100dvh-72px)] px-6 py-10 flex flex-col items-center justify-center max-w-7xl mx-auto bg-[#FFFFFF]">
         <div class="w-full">
 
             <!-- Título -->
