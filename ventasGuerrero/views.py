@@ -40,7 +40,7 @@ class ProductListViewTipe(ListView):
         context = super().get_context_data(**kwargs)
 
         tipe = self.kwargs.get("tipe")
-        context["tipe_name"] = dict(ProductGuerrero.tipo_choises).get(tipe)
+        context["tipe_name"] = dict(ProductGuerrero.TIPO_CHOICES).get(tipe)
 
         return context
 
