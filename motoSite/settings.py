@@ -12,18 +12,11 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 import os
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-"""
-Se comenta todo lo de environ para usar sqlite mientras consigue la base de datos que se va a usar.
-import environ
-env = environ.Env()
-environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
-
-DATABASES = {"default": env.db("DJANGO_DB_URL")}
-"""
 # print("DJANGO_DB_URL:", env("DJANGO_DB_URL", default="NO CARGADA"))
 
 
@@ -31,12 +24,12 @@ DATABASES = {"default": env.db("DJANGO_DB_URL")}
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-(wbxagvovz0pv=&y@6&tzh738yn8w)@be5$t4e0$t5+@a2xqnl"
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['guerrerobikersservice.com', 'www.guerrerobikersservice.com']
 
 
 # Application definition
@@ -91,10 +84,23 @@ WSGI_APPLICATION = "motoSite.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+"""
+En caso de que no queramos usar postgresql
 DATABASES = {
     "default": {
         "ENGINE": 'django.db.backends.sqlite3',
         "NAME": BASE_DIR / 'db.sqlite3',
+    }
+}
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
     }
 }
 
@@ -134,10 +140,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
+# 1. La URL con la que el navegador buscará los archivos
 STATIC_URL = "static/"
+
+# 2. Dónde buscas TÚ los archivos en desarrollo
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+# 3. Dónde los guardará DJANGO para producción (Gunicorn)
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
