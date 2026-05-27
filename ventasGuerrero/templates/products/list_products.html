@@ -26,9 +26,9 @@
                     <h2 class="text-lg font-semibold text-[#1B418C]">
                         {{ product.name }}
                     </h2>
-                    <p class="mt-4 h-40">
-                        {{ product.description }}
-                    </p>
+                    <div class="mt-4 h-40 overflow-y-auto">
+                        {{ product.description|linebreaksbr }}
+                    </div>
 
                     <p class="mt-4 text-xl font-bold text-[#1B418C] mt-2">
                         $ {{ product.price|intcomma }}
